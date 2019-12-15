@@ -1,17 +1,27 @@
-// import axios from 'axios'
+import axios from 'axios'
 // import cheerio from 'cheerio'
 
 export const Scrape = (url: string) => {
   const myInit: RequestInit = {
-    mode: 'no-cors',
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    }
+    method: 'GET',
+    mode: 'no-cors'
   }
 
-  const myRequest = new Request(url, myInit)
+  //const myRequest = new Request(url, myInit)
 
-  return fetch(myRequest)
+  axios
+    .post(
+      'https://m9tmyo340h.execute-api.eu-west-1.amazonaws.com/default/scrape',
+      { url },
+      {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      }
+    )
+    .then(res => console.log(res))
+
+  return fetch(url, myInit)
     .then(response => response.text())
     .then(response => {
       console.log(response)

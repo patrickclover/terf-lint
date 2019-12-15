@@ -71,12 +71,14 @@ export default class App extends React.Component {
             <Col sm={16}>
               <div style={{ margin: '0 50px' }}>
                 <Form>
+                  {/**
                   <Form.Item label="Load from url">
                     <Input
                       type="url"
                       onChange={e => this.getUrl(e.target.value)}
                     />
                   </Form.Item>
+                   */}
                   <Form.Item label="Insert copy here">
                     <Input.TextArea
                       className="TextArea"
