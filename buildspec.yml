@@ -16,7 +16,7 @@ phases:
     commands:
       - echo "==> CODEBUILD_GIT_BRANCH = ${CODEBUILD_GIT_BRANCH} ${BRANCH_NAME} d $GIT_REPO"
       - echo "${CODEBUILD_BUILD_ARN}"
-      - yarn build-production
+      - yarn build
 
   post_build:
     commands:

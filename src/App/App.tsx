@@ -93,16 +93,19 @@ export default class App extends React.Component {
               </div>
             </Col>
             <Col sm={8}>
-              <List
-                size="small"
-                bordered
-                dataSource={terfResults}
-                renderItem={item => (
-                  <List.Item>
-                    {item.term} <Tag>{item.count}</Tag>
-                  </List.Item>
-                )}
-              />
+              <h3 style={{ marginTop: 10 }}>Results ({terfResults.length})</h3>
+              {terfResults.length > 0 && (
+                <List
+                  size="small"
+                  bordered
+                  dataSource={terfResults}
+                  renderItem={item => (
+                    <List.Item>
+                      {item.term} <Tag>{item.count}</Tag>
+                    </List.Item>
+                  )}
+                />
+              )}
             </Col>
           </Row>
         </Content>
